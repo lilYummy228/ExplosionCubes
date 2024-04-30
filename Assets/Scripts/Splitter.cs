@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Splitter : MonoBehaviour
@@ -32,10 +33,8 @@ public class Splitter : MonoBehaviour
             _chanceToSplit /= _devider;
 
             _cube.transform.localScale /= _devider;
-
-            _spawner.CreateCubes(_cube);
-
-            _explosion.Explode();
+            
+            _explosion.Explode(_spawner.CreateCubes(_cube));
         }
     }
 }

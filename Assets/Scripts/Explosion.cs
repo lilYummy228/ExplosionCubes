@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -6,15 +7,12 @@ public class Explosion : MonoBehaviour
     [SerializeField] private float _explosionRadius = 100;
     [SerializeField] private float _explosionForce = 500;
 
-    private Rigidbody _rigidbody;
-
-    private void Start()
+    public void Explode(List<Cube> cubes)
     {
-        _rigidbody = gameObject.GetComponent<Rigidbody>();        
-    }
-
-    public void Explode()
-    {
-        _rigidbody.AddExplosionForce(_explosionForce, transform.position, _explosionRadius);
+        foreach (Cube cube in cubes)
+        {
+            Rigidbody rigidbody = cube.GetComponent<Rigidbody>();
+            rigidbody.AddExplosionForce(_explosionForce, transform.position, _explosionRadius);
+        }
     }
 }
