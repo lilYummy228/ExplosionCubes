@@ -4,6 +4,7 @@ public class Splitter : MonoBehaviour
 {
     [SerializeField, Range(0, 100)] private int _chanceToSplit = 100;
     [SerializeField] private Explosion _explosion;
+    [SerializeField] private Spawner _spawner;
 
     private Cube _cube;
     private int _randomValue;
@@ -24,15 +25,17 @@ public class Splitter : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void ShouldSplitUp(bool isSuccess)
+    private void ShouldSplitUp(bool isSplit)
     {
-        if (isSuccess)
+        if (isSplit)
         {
             _chanceToSplit /= _devider;
 
             _cube.transform.localScale /= _devider;
 
-            _explosion.Explode();
+            _spawner.CreateCubes(_cube);
+
+            //_explosion.Explode();
         }
     }
 }
