@@ -35,7 +35,7 @@ public class Splitter : MonoBehaviour
 
             _spawner.CreateCubes(_cube);
 
-            //_explosion.Explode();
+            _explosion.Explode();
         }
     }
 }
