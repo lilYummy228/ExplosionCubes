@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _explosionRadius: 100
-  _explosionForce: 500
+  _explosionForce: 100
 --- !u!1 &841717214
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _explosionRadius: 100
-  _explosionForce: 500
+  _explosionForce: 100
 --- !u!114 &1184975334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,7 +884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _explosionRadius: 100
-  _explosionForce: 500
+  _explosionForce: 100
 --- !u!114 &1514672529
 MonoBehaviour:
   m_ObjectHideFlags: 0

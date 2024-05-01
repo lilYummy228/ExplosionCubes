@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Splitter : MonoBehaviour
@@ -9,7 +8,7 @@ public class Splitter : MonoBehaviour
 
     private Cube _cube;
     private int _randomValue;
-    private int _devider = 2;
+    private int _constant = 2;
     private int _minValue = 0;
     private int _maxValue = 100;
 
@@ -30,11 +29,20 @@ public class Splitter : MonoBehaviour
     {
         if (isSplit)
         {
-            _chanceToSplit /= _devider;
+            DivideValues();
+            _explosion.MultiplyValues(_constant);
 
-            _cube.transform.localScale /= _devider;
-            
-            _explosion.Explode(_spawner.CreateCubes(_cube));
+            _spawner.CreateCubes(_cube);
         }
+        else
+        {
+            _explosion.Explode();
+        }
+    }
+
+    private void DivideValues()
+    {
+        _chanceToSplit /= _constant;
+        _cube.transform.localScale /= _constant;        
     }
 }
